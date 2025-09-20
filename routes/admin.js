@@ -1,5 +1,6 @@
 const { Router } = require("express")
 const adminRouter = Router()
+const adminModel = require("../db")
 
     adminRouter.post("/login", function(req, res){
         res.json({
@@ -12,8 +13,6 @@ const adminRouter = Router()
             message: " Signup Endpoint"
         })
     })
-
-    adminRouter.use(adminMiddleware())
 
     adminRouter.post("/course/create", function(req, res){
         res.json({
@@ -32,3 +31,7 @@ const adminRouter = Router()
             message: "All courses Preview"
         })
     })
+
+module.exports = {
+    adminRouter: adminRouter
+}

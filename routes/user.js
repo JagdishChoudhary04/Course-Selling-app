@@ -1,6 +1,7 @@
 const { Router } = require("express")
 const userRouter = Router()
-    
+const userModel = require("../db")    
+
     userRouter.post('/login', function (req,res) {
         res.json({
             message: "Login endpoint"
